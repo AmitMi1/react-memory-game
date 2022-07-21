@@ -1,0 +1,62 @@
+.timer {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        padding: 6px;
+        background: linear-gradient(45deg, #743ad5, #d53a9d);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+
+    }
+
+
+    &.start {
+        &::before {
+            animation: timerRun 300ms ease-in-out infinite !important;
+        }
+    }
+
+    @keyframes timerRun {
+        0% {
+            background: linear-gradient(0deg, #743ad5, #d53a9d);
+        }
+
+        20% {
+            background: linear-gradient(72deg, #743ad5, #d53a9d);
+        }
+
+        40% {
+            background: linear-gradient(144deg, #743ad5, #d53a9d);
+        }
+
+        60% {
+            background: linear-gradient(216deg, #743ad5, #d53a9d);
+        }
+
+        80% {
+            background: linear-gradient(288deg, #743ad5, #d53a9d);
+        }
+
+        100% {
+            background: linear-gradient(360deg, #743ad5, #d53a9d);
+        }
+
+
+    }
+
+}
